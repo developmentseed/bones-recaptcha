@@ -16,14 +16,14 @@ view = Backbone.View.extend({
     submit: function() {
         var data = {
             url: '/recaptcha-submit',
-            recaptcha_challenge_field: this.$('form input[name="recaptcha_challenge_field"]').val(),
-            recaptcha_response_field: this.$('form input[name="recaptcha_response_field"]').val()
+            recaptcha_challenge_field: Recaptcha.get_challenge(),
+            recaptcha_response_field: Recaptcha.get_response()
         };
 
         Backbone.sync('create', data, function() {
-            console.warn('success');
+            // Success!
         }, function() {
-            console.warn('error');
+            Recaptcha.reload();
         });
         return false;
     }

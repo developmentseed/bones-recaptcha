@@ -8,7 +8,9 @@ servers.Core.augment({
     }
 });
 
-servers.Route.prototype.verifyCaptcha = function(req, res, next) {
+server = Bones.Server.extend();
+
+server.verifyReCaptcha = function(req, res, next) {
     if (!req.body || !req.body.recaptcha_challenge_field || !req.body.recaptcha_response_field) {
         return next(new Error.HTTP('Captcha missing', 403));
     } else {
