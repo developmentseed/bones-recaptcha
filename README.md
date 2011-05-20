@@ -3,10 +3,13 @@ Protects forms with a [reCAPTCHA](http://www.google.com/recaptcha) to prevent ma
 
 ## Usage
 
-* To add a captcha to a form, add `<%= this.ReCaptcha() %>` to your form template code. 
+* To add a captcha to a form, add `<%= this.ReCaptcha() %>` to your form template code.
 
-* Protect your form/model submission endpoint with   
-  `this.post('/endpoint-url', servers.ReCaptcha.verifyReCaptcha);`
+* Protect your form/model submission endpoint with
+
+        this.post('/endpoint-url', servers.ReCaptcha.verifyReCaptcha);
+        this.put('/endpoint-url', servers.ReCaptcha.verifyReCaptcha);
+        this.del('/endpoint-url', servers.ReCaptcha.verifyReCaptcha);
 
 * When submitting the form via AJAX, make sure you include these fields:
 
