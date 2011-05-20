@@ -3,6 +3,13 @@ Protects forms with a [reCAPTCHA](http://www.google.com/recaptcha) to prevent ma
 
 ## Usage
 
+* Add your API keys to your configuration JSON file:
+
+        {
+            "recaptchaPrivateKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "recaptchaPublicKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+
 * To add a captcha to a form, add `<%= this.ReCaptcha() %>` to your form template code.
 
 * Protect your form/model submission endpoint with
